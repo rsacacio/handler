@@ -5,16 +5,10 @@
 // You're free to add application-wide JavaScript to this file, but it's generally better 
 // to create separate JavaScript files as needed.
 //
-//= require jquery
-//= require_tree .
+//= require node_modules/angular/angular
+//= require node_modules/angular-route/angular-route
+//= require node_modules/jquery/dist/jquery
+//= require node_modules/bootstrap/dist/js/bootstrap
+//= require node_modules/ng-table/dist/ng-table
+//= require_tree frontend
 //= require_self
-
-if (typeof jQuery !== 'undefined') {
-	(function($) {
-		$('#spinner').ajaxStart(function() {
-			$(this).fadeIn();
-		}).ajaxStop(function() {
-			$(this).fadeOut();
-		});
-	})(jQuery);
-}

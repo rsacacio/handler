@@ -1,0 +1,13 @@
+<table ng-table="tableCategory" show-filter="true" class="table">
+    <tr ng-repeat="category in $data">
+        <td data-title="'Nome'" sortable="'name'">
+            {{category.name}}
+        </td>
+        <td data-title="'Descrição'" sortable="'description'">
+            {{category.description}}
+        </td>
+    </tr>
+</table>
+<div>
+    <a type="button" class="btn btn-success" href="#/category/add">Adicionar</a>
+</div>

@@ -1,0 +1,13 @@
+<table ng-table="tableUnit" show-filter="true" class="table">
+    <tr ng-repeat="unit in $data">
+        <td data-title="'Nome'" sortable="'name'">
+            {{unit.name}}
+        </td>
+        <td data-title="'Descrição'" sortable="'description'">
+            {{unit.description}}
+        </td>
+    </tr>
+</table>
+<div>
+    <a type="button" class="btn btn-success" href="#/unit/add">Adicionar</a>
+</div>

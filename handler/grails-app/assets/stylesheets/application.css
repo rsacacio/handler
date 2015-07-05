@@ -9,5 +9,7 @@
 *
 *= require main
 *= require mobile
+*= require node_modules/bootstrap/dist/css/bootstrap
+*= require node_modules/ng-table/dist/ng-table
 *= require_self
 */

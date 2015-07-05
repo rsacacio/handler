@@ -1,0 +1,22 @@
+<table ng-table="tableProduct" show-filter="true" class="table">
+    <tr ng-repeat="product in $data">
+        <td data-title="'Nome'" sortable="'name'">
+            {{product.name}}
+        </td>
+        <td data-title="'Descrição'" sortable="'description'">
+            {{product.description}}
+        </td>
+        <td data-title="'Preço'" sortable="'price'">
+            {{product.price}}
+        </td>
+        <td data-title="'Unidade'" sortable="'product.unit.name'">
+            {{product.unit.name}}
+        </td>
+        <td data-title="'Categoria'" sortable="'product.category.name'">
+            {{product.category.name}}
+        </td>
+    </tr>
+</table>
+<div>
+    <a type="button" class="btn btn-success" href="#/product/add">Adicionar</a>
+</div>

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default" ng-controller="HeaderController">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+		    <li ng-class="getClass('/unit')">
+		    	<a href="#/unit">Unidade</a>
+		    </li>
+		    <li ng-class="getClass('/category')">
+		    	<a href="#/category">Categoria</a>
+		    </li>
+		    <li ng-class="getClass('/product')">
+		    	<a href="#/product">Product</a>
+		    </li>
+	  	</ul>
+  	</div>
+  </div>
+</nav>
