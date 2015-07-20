@@ -1,0 +1,43 @@
+.navbar {
+  	border-radius: 0px;
+  	height: 40px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  	color: #FFF;
+}
+
+.navbar-inverse .navbar-brand {
+  	color: #FFF;
+}
+
+.navbar-text {
+  	margin-top: 10px;
+  	margin-bottom: 10px;
+}
+
+.navbar-inverse .navbar-text {
+  	color: #FFF;
+  	line-height: 1.00;
+}
+
+.navbar .container {
+  	padding-right: 90px;
+  	padding-left: 90px;
+}
+
+#view{
+	  padding-right: 90px;
+  	padding-left: 90px;
+}
+
+#header-menu{
+  	height: 90px;
+  	border-bottom: 3px solid #CCC;
+  	margin-bottom: 20px;
+}
+
+#header-menu .container{
+    padding-right: 90px;
+  	padding-left: 90px;
+}

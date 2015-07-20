@@ -1,21 +1,55 @@
-<nav class="navbar navbar-default" ng-controller="HeaderController">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	    <ul class="nav navbar-nav">
-		    <li ng-class="getClass('/unit')">
-		    	<a href="#/unit">Unidade</a>
-		    </li>
-		    <li ng-class="getClass('/category')">
-		    	<a href="#/category">Categoria</a>
-		    </li>
-		    <li ng-class="getClass('/product')">
-		    	<a href="#/product">Product</a>
-		    </li>
-	  	</ul>
-  	</div>
-  </div>
-</nav>
+<div>
+	<nav class="navbar navbar-inverse" ng-controller="HeaderController">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	      	Handler
+	      </a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <!-- <ul class="nav navbar-nav">
+			    <li ng-class="getClass('/unit')">
+			    	<a href="#/unit">Unidade</a>
+			    </li>
+			    <li ng-class="getClass('/category')">
+			    	<a href="#/category">Categoria</a>
+			    </li>
+			    <li ng-class="getClass('/product')">
+			    	<a href="#/product">Product</a>
+			    </li>
+		  	</ul> -->
+		  	<div class="navbar-text navbar-right">
+		  		<div class="row">
+		  			<div class="col-md-7">
+		  				<span style="font-size:12px;text-align:right">
+		  					Pete Festeiro
+		  				</span><br/>
+		  				<span style="font-size:12px;text-align:right">
+	  						Gerente
+		  				</span>
+		  			</div>
+	  				<div class="col-md-2" style="color:#FFF">
+	  					<span style="font-size:23px; vertical-align:middle">
+							<i class="fa fa-cog"></i>
+	  					</span>
+	  				</div>
+	  				<div class="col-md-1" style="color:#FFF">
+	  					<span style="font-size:23px; vertical-align:middle">
+							<i class="fa fa-caret-down"></i>
+	  					</span>
+	  				</div>
+		  		</div>
+		  	</div>
+	  	</div>
+	  </div>
+	</nav>
+	<div id="header-menu" class="container-fluid">
+		<div class="container">
+			<a href="#/orders">Pedidos</a>
+			<a href="#/products">Produtos</a>
+			<a href="#/customers">Clientes</a>
+			<a href="#/providers">Fornecedores</a>
+			<a href="#/team">Equipe</a>
+		</div>
+	</div>
+</div>

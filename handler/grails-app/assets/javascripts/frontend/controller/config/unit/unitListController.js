@@ -1,4 +1,4 @@
-angular.module('handlerApp').controller('UnitListController', function($scope, UnitListFactory, ngTableParams, FilterSearchService){
+angular.module('handlerApp').controller('UnitListController', function($scope, UnitListFactory, ngTableParams, FilterSearchService, $location){
 
 	$scope.tableUnit = new ngTableParams({
         page: 1,            // show first page
@@ -14,4 +14,9 @@ angular.module('handlerApp').controller('UnitListController', function($scope, U
             });
         }
     });
+
+    $scope.itemsBreadCrumbs = [];
+    $scope.itemsBreadCrumbs.push({name: 'voltar', url: '#/'});
+
+    $scope.itemsIndicators = [];
 });

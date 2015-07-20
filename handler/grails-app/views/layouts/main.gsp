@@ -14,6 +14,6 @@
 	</head>
 	<body ng-app="handlerApp">
 		<div ng-include="'views/fragments/header.html'"></div>
-		<div ng-view="" class="container"></div>
+		<div id="view" ng-view="" class="container"></div>
 	</body>
 </html>

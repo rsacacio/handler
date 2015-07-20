@@ -1,6 +1,6 @@
 package br.com.catalisa.handler
 
-class Office {
+class Occupation {
 
 	String name
 	String description

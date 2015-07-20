@@ -10,6 +10,9 @@
 *= require main
 *= require mobile
 *= require node_modules/bootstrap/dist/css/bootstrap
+*= require fontawesome/css/font-awesome.min
+*= require_tree vendor/fontawesome/font
+*= require header
 *= require node_modules/ng-table/dist/ng-table
 *= require_self
 */

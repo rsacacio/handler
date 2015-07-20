@@ -15,4 +15,9 @@ angular.module('handlerApp').controller('ProductListController', function($scope
             });
         }
     });
+
+    $scope.itemsBreadCrumbs = [];
+    $scope.itemsBreadCrumbs.push({name: 'voltar', url: '#/'});
+    
+    $scope.itemsIndicators = [];
 });

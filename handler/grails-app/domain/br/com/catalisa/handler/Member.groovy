@@ -3,16 +3,16 @@ package br.com.catalisa.handler
 class Member {
 
 	String name
-	Date borner
+	Date born
 	String phone
 	String email
 	Status status
 	
-	static hasMany = [ambiance: Ambiance, offices: Office]
+	static hasMany = [ambiances: Ambiance, occupations: Occupation]
 	
     static constraints = {
 		name nullable: false, size:3..255
-		borner nullable: false
+		born nullable: false
 		phone nullable: false, unique: true
 		email nullable: false, unique: true
 		status nullable: false

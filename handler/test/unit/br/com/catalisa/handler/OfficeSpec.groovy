@@ -6,7 +6,7 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(Office)
+@TestFor(Occupation)
 class OfficeSpec extends Specification {
 
     def setup() {
