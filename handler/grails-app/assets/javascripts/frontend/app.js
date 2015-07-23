@@ -1,6 +1,5 @@
 angular.module("handlerApp", ['ngRoute', 'ngTable']).config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-	when("/main", {templateUrl: "views/main.html", controller: "MainController"}).
 	when('/orders', {templateUrl: 'views/orders/orderList.html', controller: 'OrderListController'}).
 	when("/products", {templateUrl: "views/products/productList.html", controller: "ProductListController"}).
 	when("/products/add", {templateUrl: "views/products/productAdd.html", controller: "ProductAddController"}).
@@ -12,5 +11,5 @@ angular.module("handlerApp", ['ngRoute', 'ngTable']).config(['$routeProvider', f
 	when("/category/add", {templateUrl: "views/config/category/categoryAdd.html", controller: "CategoryAddController"}).
 	when("/category", {templateUrl: "views/config/category/categoryList.html", controller: "CategoryListController"}).
 	
-	otherwise({redirectTo: '/main'});
+	otherwise({redirectTo: '/orders'});
 }]);

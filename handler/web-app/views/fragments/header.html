@@ -7,17 +7,6 @@
 	      </a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		    <!-- <ul class="nav navbar-nav">
-			    <li ng-class="getClass('/unit')">
-			    	<a href="#/unit">Unidade</a>
-			    </li>
-			    <li ng-class="getClass('/category')">
-			    	<a href="#/category">Categoria</a>
-			    </li>
-			    <li ng-class="getClass('/product')">
-			    	<a href="#/product">Product</a>
-			    </li>
-		  	</ul> -->
 		  	<div class="navbar-text navbar-right">
 		  		<div class="row">
 		  			<div class="col-md-7">
@@ -45,11 +34,14 @@
 	</nav>
 	<div id="header-menu" class="container-fluid">
 		<div class="container">
-			<a href="#/orders">Pedidos</a>
-			<a href="#/products">Produtos</a>
-			<a href="#/customers">Clientes</a>
-			<a href="#/providers">Fornecedores</a>
-			<a href="#/team">Equipe</a>
+			<div class="row">
+				<img class="col-md-2" src="images/logo-g.png">
+				<fw-menu-item title="Pedidos" icon="fa-shopping-cart" url="/orders" active="getActive('/orders')" class="col-md-2"></fw-menu-item>
+				<fw-menu-item title="Produtos" icon="fa-cubes" url="/products" active="getActive('products')" class="col-md-2"></fw-menu-item>
+				<fw-menu-item title="Clientes" icon="fa-building" url="/customers" active="getActive('customers')" class="col-md-2"></fw-menu-item>
+				<fw-menu-item title="Fornecedores" icon="fa-truck" url="/providers" active="getActive('providers')" class="col-md-2"></fw-menu-item>
+				<fw-menu-item title="Equipe" icon="fa-users" url="/team" active="getActive('team')" class="col-md-2"></fw-menu-item>
+			</div>
 		</div>
 	</div>
 </div>

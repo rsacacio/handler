@@ -6,7 +6,9 @@ angular.module('handlerApp').directive('fwIndicators', function(){
 		},
 		templateUrl: 'views/directive/indicators.html',
 		link: function(scope, iElement, iAttrs){
-			
+			scope.indicadores = [1,2,3,4];
+			scope.indicadores2 = [1,2,3];
+
 		}
 	}
 });

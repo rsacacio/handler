@@ -2,11 +2,13 @@ html {
 
 }
 
-.breadCrumbTitle{
+.panelTitle{
 	background-color: #f5f5f5;
 	border-top: 1px solid #CCC;
 	border-bottom: 1px solid #CCC;
 	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .breadcrumb {

@@ -41,3 +41,12 @@
     padding-right: 90px;
   	padding-left: 90px;
 }
+
+#header-menu a {
+  color: #333;
+}
+
+.menu-item-active{
+  border-bottom: 4px solid #46b8da;
+  padding-bottom: 15px;
+}

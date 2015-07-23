@@ -2,7 +2,15 @@
 <fw-indicators items="itemsIndicators"></fw-indicators>
 <div class="page">
     <fw-page-actions button-title="Novo produto" button-action="#/product/add"></fw-page-actions>
-    <table ng-table="tableProduct" show-filter="true" class="table">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panelTitle"><b>Filtros</b></div>
+        </div>
+        <div class="col-md-9">
+            <div class="panelTitle"><b>Pedido</b></div>
+        </div>
+    </div>
+<!--     <table ng-table="tableProduct" show-filter="true" class="table">
         <tr ng-repeat="product in $data">
             <td data-title="'Nome'" sortable="'name'">
                 {{product.name}}
@@ -23,5 +31,5 @@
     </table>
     <div>
         <a type="button" class="btn btn-success" href="#/product/add">Adicionar</a>
-    </div>
+    </div> -->
 </div>
