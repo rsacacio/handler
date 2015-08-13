@@ -1,5 +1,40 @@
 <fw-bread-crumbs items="itemsBreadCrumbs" title="Pedidos"></fw-bread-crumbs>
-<fw-indicators items="itemsIndicators"></fw-indicators>
+<fw-indicators items="itemsIndicators" ng-if="hasData"></fw-indicators>
 <div class="page">
-	<fw-page-actions button-title="Novo pedido" button-action="#/order/add"></fw-page-actions>
+	<fw-page-actions button-title="Novo pedido" button-action="#/order/add" ng-if="hasData"></fw-page-actions>
+	<fw-empty-page title="Você ainda não cadastrou nenhum pedido" button-title="Novo pedido" button-action="#/orders/add" 
+	ng-if="!hasData"></fw-page-actions>
+	<div class="row" ng-if="hasData">
+        <div class="col-md-3">
+            <div class="panelTitle"><b>Filtros</b></div>
+        </div>
+        <div class="col-md-9">
+			<table ng-table="tableOrders" class="table">
+				<thead>
+					<th>
+						<han-table-header table-params="tableOrders" title="Pedido"></han-table-header>
+					</th>
+					<th>
+						<han-table-header table-params="tableOrders" title="Entrega"></han-table-header>
+					</th>
+					<th>
+						<han-table-header table-params="tableOrders" title="Pagamento"></han-table-header>
+					</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="ordes in $data">
+			            <td width="70%">
+			                {{order.customer.name}}
+			            </td>
+			            <td width="15%">
+			                {{order.delivery.date}}
+			            </td>
+			            <td width="15%">
+			                {{order.payment.date}}
+			            </td>
+			        </tr>
+				</tbody>
+		    </table>
+        </div>
+    </div>
 </div>

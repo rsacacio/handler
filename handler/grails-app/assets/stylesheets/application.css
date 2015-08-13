@@ -14,5 +14,7 @@
 *= require_tree vendor/fontawesome/font
 *= require header
 *= require node_modules/ng-table/dist/ng-table
+*= require angular/plugins/select/select
+*= require table
 *= require_self
 */

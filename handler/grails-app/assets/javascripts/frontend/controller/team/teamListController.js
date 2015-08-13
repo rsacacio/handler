@@ -20,4 +20,5 @@ angular.module('handlerApp').controller('TeamListController', function($scope, P
     $scope.itemsBreadCrumbs.push({name: 'voltar', url: '#/'});
 
     $scope.itemsIndicators = [];
+    $scope.hasData = false;
 });

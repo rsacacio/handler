@@ -1,0 +1,10 @@
+<div style="float:left">
+	<a ng-if="sort" ng-class="classHeader()" ng-click="sortList()">
+    	{{ title }}
+    	<i ng-class="classSort()"></i>
+	</a>
+	<span ng-if="!sort">
+	    {{ title }}
+	</span>
+</div>
+

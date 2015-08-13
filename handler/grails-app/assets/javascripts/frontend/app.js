@@ -1,4 +1,5 @@
-angular.module("handlerApp", ['ngRoute', 'ngTable']).config(['$routeProvider', function($routeProvider) {
+angular.module("handlerApp", ['ngRoute', 'ngTable', 'angularSpinners', 'ui.bootstrap', 'ui.select', 'ngSanitize'])
+.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
   $routeProvider.
 	when('/orders', {templateUrl: 'views/orders/orderList.html', controller: 'OrderListController'}).
 	when("/products", {templateUrl: "views/products/productList.html", controller: "ProductListController"}).
@@ -10,6 +11,8 @@ angular.module("handlerApp", ['ngRoute', 'ngTable']).config(['$routeProvider', f
 	when("/unit", {templateUrl: "views/config/unit/unitList.html", controller: "UnitListController"}).
 	when("/category/add", {templateUrl: "views/config/category/categoryAdd.html", controller: "CategoryAddController"}).
 	when("/category", {templateUrl: "views/config/category/categoryList.html", controller: "CategoryListController"}).
+	when("/configAmbiance/:page?/:list?", {templateUrl: "views/config/configAmbiance.html", controller: "ConfigAmbianceController"}).
 	
 	otherwise({redirectTo: '/orders'});
+    $httpProvider.interceptors.push('mainLoadingSpinnerInterceptor');
 }]);

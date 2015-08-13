@@ -1,10 +1,13 @@
 package br.com.catalisa.handler
 
-import br.com.catalisa.handler.commons.Filter;
-import grails.converters.JSON;
+import grails.converters.JSON
 import grails.transaction.Transactional
+import br.com.catalisa.handler.command.AmbianceCommand
+import br.com.catalisa.handler.command.ProductCommand
+import br.com.catalisa.handler.commons.Filter
+import br.com.catalisa.handler.converts.ConvertProduct
+import br.com.catalisa.handler.dto.ProductDto
 
-@Transactional(readOnly = true)
 class ProductController extends PagedRestfulController<Product>{
 
 	static responseFormats = ['json']
@@ -15,14 +18,31 @@ class ProductController extends PagedRestfulController<Product>{
 	
 	public list(){
 		println params;
-		Filter filter = params.filter as Filter;
+		Filter filter = JSON.parse(params.filter)// as Filter;
 		println filter
-		def product = Product.list(max: filter.getSize(), offset: (filter.getPage() + 1) * filter.getSize());
-		respond product;
+		
+		List<Product> list = Product.list(params)
+		List<ProductDto> listDto = new ArrayList<ProductDto>()
+		list.each {
+			listDto.add(ConvertProduct.domainInDto(it))
+		}
+//		respond listDto
+		
+//		def product = ConvertProduct.domainInDto(Product.list())//max: filter.getSize(), offset: (filter.getPage() + 1) * filter.getSize());
+		def count = Product.count()
+		respond count: count, list: listDto
 	}
 	
-	public save(Product product){
-		product.save();
+	@Transactional
+	public save(ProductCommand productCmd){
+		productCmd.ambiance = new AmbianceCommand(id: 1L)
+		Product product = ConvertProduct.commandInDomain(productCmd)
+		product.status = Status.ACTIVE
+		product.ambiance = Ambiance.findById(productCmd.ambiance.id)
+		product.unit = Unit.findById(productCmd.unit.id)
+		product.category = Category.findById(productCmd.category.id)
+		product.validate()
+		product.save(flush: true)
 		respond product;
 	}
 	

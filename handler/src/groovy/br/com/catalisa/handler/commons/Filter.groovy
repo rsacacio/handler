@@ -5,7 +5,7 @@ class Filter {
 	int page
 	int size
 	String search
-	String field
+	String sort
 	String order
 	
 }

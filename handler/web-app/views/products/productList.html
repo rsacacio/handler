@@ -1,35 +1,39 @@
 <fw-bread-crumbs items="itemsBreadCrumbs" title="Produtos"></fw-bread-crumbs>
-<fw-indicators items="itemsIndicators"></fw-indicators>
+<fw-indicators items="itemsIndicators" ng-if="hasData"></fw-indicators>
 <div class="page">
-    <fw-page-actions button-title="Novo produto" button-action="#/product/add"></fw-page-actions>
-    <div class="row">
+    <fw-page-actions button-title="Novo produto" button-action="#/products/add" ng-if="hasData"></fw-page-actions>
+    <fw-empty-page title="Você ainda não cadastrou nenhum produto" button-title="Novo produto" button-action="#/products/add" ng-if="!hasData"></fw-empty-page>
+    <div class="row" ng-if="hasData">
         <div class="col-md-3">
             <div class="panelTitle"><b>Filtros</b></div>
         </div>
         <div class="col-md-9">
-            <div class="panelTitle"><b>Pedido</b></div>
+            <table ng-table="tableProducts" class="table">
+                <thead>
+                    <th>
+                        <han-table-header table-params="tableProducts" title="Produto"></han-table-header>
+                    </th>
+                    <th>
+                        <han-table-header table-params="tableProducts" title="Unidade"></han-table-header>
+                    </th>
+                    <th>
+                        <han-table-header table-params="tableProducts" title="Preço"></han-table-header>
+                    </th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in $data">
+                        <td width="70%">
+                            {{product.name}}
+                        </td>
+                        <td width="15%">
+                            {{product.unit.abbreviation}}
+                        </td>
+                        <td width="15%">
+                            {{product.price}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-<!--     <table ng-table="tableProduct" show-filter="true" class="table">
-        <tr ng-repeat="product in $data">
-            <td data-title="'Nome'" sortable="'name'">
-                {{product.name}}
-            </td>
-            <td data-title="'Descrição'" sortable="'description'">
-                {{product.description}}
-            </td>
-            <td data-title="'Preço'" sortable="'price'">
-                {{product.price}}
-            </td>
-            <td data-title="'Unidade'" sortable="'product.unit.name'">
-                {{product.unit.name}}
-            </td>
-            <td data-title="'Categoria'" sortable="'product.category.name'">
-                {{product.category.name}}
-            </td>
-        </tr>
-    </table>
-    <div>
-        <a type="button" class="btn btn-success" href="#/product/add">Adicionar</a>
-    </div> -->
 </div>

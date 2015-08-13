@@ -4,8 +4,9 @@ import br.com.catalisa.handler.Status
 
 class MemberDto {
 
+	long id
 	String name
-	Date borner
+	Date born
 	String phone
 	String email
 	Status status

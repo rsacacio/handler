@@ -1,8 +1,9 @@
 package br.com.catalisa.handler
 
 import static org.springframework.http.HttpStatus.*
-import grails.rest.RestfulController
 import grails.transaction.Transactional
+import br.com.catalisa.handler.converts.ConvertUnit
+import br.com.catalisa.handler.dto.UnitDto
 
 
 @Transactional(readOnly = true)
@@ -16,7 +17,12 @@ class UnitController extends PagedRestfulController<Unit>{
 	
 	public list() {
 //		new Unit(name: "teste4", description: "aaa4").save(true)
-		respond Unit.list(params);
+		List<Unit> list = Unit.list(params)
+		List<UnitDto> listDto = new ArrayList<UnitDto>()
+		list.each {
+			listDto.add(ConvertUnit.domainInDto(it))
+		}
+		respond listDto
 	}
 	
 	public save(Unit unit){

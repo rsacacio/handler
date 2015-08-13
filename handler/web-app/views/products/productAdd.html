@@ -1,38 +1,51 @@
-<form class="form-horizontal">
-  <div class="form-group">
-    <label for="nome" class="col-sm-2 control-label">Nome</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="nome" ng-model="product.name">
+<fw-bread-crumbs items="itemsBreadCrumbs" title="Novo produto"></fw-bread-crumbs>
+<div class="page">
+  <form name="productForm" novalidate>
+    <div class="form-group" fw-show-errors>
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" name="name" ng-model="product.name" required="true">
+      <p class="help-block" ng-if="productForm.name.$error.required">Campo obrigatório</p>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="descricao" class="col-sm-2 control-label">Descrição</label>
-    <div class="col-sm-10">
-      <textarea ng-model="product.description" class="form-control" rows="3"></textarea>
+    <div class="form-group" fw-show-errors>
+      <label for="descricao">Descrição</label>
+      <textarea name="description" ng-model="product.description" class="form-control" rows="3" required="true"></textarea>
+      <p class="help-block" ng-if="productForm.description.$error.required">Campo obrigatório</p>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="price" class="col-sm-2 control-label">Preço</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="price" ng-model="product.price">
+    <div class="form-group" fw-show-errors>
+      <label for="price">Preço</label>
+      <input type="number" name="price" class="form-control" id="price" ng-model="product.price" required="true">
+      <p class="help-block" ng-if="productForm.price.$error.required">Campo obrigatório</p>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="unit" class="col-sm-2 control-label">Unidade</label>
-    <div class="col-sm-10">
-      <select ng-model="product.unit" ng-options="unit as unit.name for unit in unitList"></select>
+    <div class="form-group" fw-show-errors>
+      <label for="unit">Unidade</label>
+      <ui-select ng-model="product.unit" name="unit" append-to-body="true" theme="bootstrap" required="true">
+        <ui-select-match placeholder=" ">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="unit in unitList | filter: $select.search">
+            <small style="font-size:12px;">
+              {{unit.name}} - {{unit.abbreviation}}
+            </small>
+            <div class="titulo" ng-bind-html="unit.description| highlight: $select.search" style="border-bottom:1px dashed #ccc"></div>
+        </ui-select-choices>
+      </ui-select>
+      <p class="help-block" ng-if="productForm.unit.$error.required">Campo obrigatório</p>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="category" class="col-sm-2 control-label">Categoria</label>
-    <div class="col-sm-10">
-      <select ng-model="product.category" ng-options="category as category.name for category in categoryList"></select>
+    <div class="form-group" fw-show-errors>
+      <label for="category">Categoria</label> 
+      <ui-select ng-model="product.category" name="category" append-to-body="true" theme="bootstrap" required="true">
+        <ui-select-match placeholder=" ">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="category in categoryList | filter: $select.search">
+          <small style="font-size:12px;">
+              {{category.name}} - {{category.abbreviation}}
+            </small>
+            <div class="titulo" ng-bind-html="category.description| highlight: $select.search" style="border-bottom:1px dashed #ccc"></div>
+        </ui-select-choices>
+      </ui-select>
+      <p class="help-block" ng-if="productForm.category.$error.required">Campo obrigatório</p>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="button" class="btn btn-default">Cancelar</button>
-      <button type="submit" class="btn btn-primary" ng-click="save()">Salvar</button>
+    <div class="form-group">
+        <button type="button" class="btn btn-default">Cancelar</button>
+        <button type="submit" class="btn btn-primary" ng-click="save()">Salvar</button>
+      </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>

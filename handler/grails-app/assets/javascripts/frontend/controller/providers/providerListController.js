@@ -3,4 +3,5 @@ angular.module('handlerApp').controller('ProviderListController', function($scop
     $scope.itemsBreadCrumbs.push({name: 'voltar', url: '#/'});
 
     $scope.itemsIndicators = [];
+    $scope.hasData = false;
 });

@@ -1,7 +1,8 @@
 <fw-bread-crumbs items="itemsBreadCrumbs" title="Fornecedores"></fw-bread-crumbs>
-<fw-indicators items="itemsIndicators"></fw-indicators>
+<fw-indicators items="itemsIndicators" ng-if="hasData"></fw-indicators>
 <div class="page">
-    <fw-page-actions button-title="Novo fornecedor" button-action="#/provider/add"></fw-page-actions>
+    <fw-page-actions button-title="Novo fornecedor" button-action="#/provider/add" ng-if="hasData"></fw-page-actions>
+    <fw-empty-page title="Você ainda não cadastrou nenhum cliente" button-title="Novo cliente" button-action="#/customer/add" ng-if="!hasData"></fw-empty-page>
     <!-- <table ng-table="tableProduct" show-filter="true" class="table">
         <tr ng-repeat="product in $data">
             <td data-title="'Nome'" sortable="'name'">

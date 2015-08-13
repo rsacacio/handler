@@ -1,15 +1,20 @@
 <fw-bread-crumbs items="itemsBreadCrumbs" title="Unidade"></fw-bread-crumbs>
-<fw-indicators items="itemsIndicators"></fw-indicators>
-<table ng-table="tableUnit" show-filter="true" class="table">
-    <tr ng-repeat="unit in $data">
-        <td data-title="'Nome'" sortable="'name'">
-            {{unit.name}}
-        </td>
-        <td data-title="'Descrição'" sortable="'description'">
-            {{unit.description}}
-        </td>
-    </tr>
+<fw-page-actions button-title="Novo produto" button-action="#/configAmbiance/unit/Add" ></fw-page-actions>
+<table ng-table="tableUnit" class="table">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrição</th>
+		</tr>
+	</thead>
+	<tbody>
+	    <tr ng-repeat="unit in $data">
+	        <td data-title="'Nome'" sortable="'name'">
+	            {{unit.name}}
+	        </td>
+	        <td data-title="'Descrição'" sortable="'description'">
+	            {{unit.description}}
+	        </td>
+	    </tr>
+	</tbody>
 </table>
-<div>
-    <a type="button" class="btn btn-success" href="#/unit/add">Adicionar</a>
-</div>

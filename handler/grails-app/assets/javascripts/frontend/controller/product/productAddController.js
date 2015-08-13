@@ -1,8 +1,11 @@
 angular.module('handlerApp').controller('ProductAddController', function($scope, $location, ProductAddFactory){
 	$scope.save = function(){
-		ProductAddFactory.save($scope.product, function(data){
-			$location.path('/product/');
-		});
+		$scope.$broadcast('show-errors-check-validity');
+	    if ($scope.productForm.$valid) {
+			ProductAddFactory.save($scope.product, function(data){
+				$location.path('/products/');
+			});
+		}
 	};
 
 	ProductAddFactory.loadUnit(function(data){
@@ -14,4 +17,7 @@ angular.module('handlerApp').controller('ProductAddController', function($scope,
 		$scope.categoryList = data;
 		console.log(data);
 	});
+
+	$scope.itemsBreadCrumbs = [];
+    $scope.itemsBreadCrumbs.push({name: 'voltar', url: '#/products'});
 });

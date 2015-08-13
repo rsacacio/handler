@@ -3,7 +3,8 @@ package br.com.catalisa.handler.dto
 import br.com.catalisa.handler.Status
 
 class CategoryDto {
-	String name;
+	long id
+	String name
 	String description
 	String abbreviation
 	AmbianceDto ambiance

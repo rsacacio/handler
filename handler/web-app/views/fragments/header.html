@@ -3,7 +3,7 @@
 	  <div class="container">
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="#">
-	      	Handler
+	      	<img src="images/handler.logo.png"></img>
 	      </a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -22,10 +22,27 @@
 							<i class="fa fa-cog"></i>
 	  					</span>
 	  				</div>
-	  				<div class="col-md-1" style="color:#FFF">
-	  					<span style="font-size:23px; vertical-align:middle">
-							<i class="fa fa-caret-down"></i>
-	  					</span>
+	  				<div class="col-md-1" style="color:#FFF;cursor:pointer">
+	  					<div class="dropdown user pull-right" dropdown>
+	  						<span style="font-size:23px; vertical-align:middle" dropdown-toggle>
+								<i class="fa fa-caret-down"></i>
+							</span>
+							<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="username">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#/configAmbiance">
+										<i class="fa fa-cog"></i> 
+										Configurações
+									</a>
+								</li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#/logout">
+										<i class="fa fa-sign-out"></i> 
+										Sair
+									</a>
+								</li>
+							</ul>
+						</div>
 	  				</div>
 		  		</div>
 		  	</div>
@@ -35,12 +52,14 @@
 	<div id="header-menu" class="container-fluid">
 		<div class="container">
 			<div class="row">
-				<img class="col-md-2" src="images/logo-g.png">
-				<fw-menu-item title="Pedidos" icon="fa-shopping-cart" url="/orders" active="getActive('/orders')" class="col-md-2"></fw-menu-item>
-				<fw-menu-item title="Produtos" icon="fa-cubes" url="/products" active="getActive('products')" class="col-md-2"></fw-menu-item>
-				<fw-menu-item title="Clientes" icon="fa-building" url="/customers" active="getActive('customers')" class="col-md-2"></fw-menu-item>
-				<fw-menu-item title="Fornecedores" icon="fa-truck" url="/providers" active="getActive('providers')" class="col-md-2"></fw-menu-item>
-				<fw-menu-item title="Equipe" icon="fa-users" url="/team" active="getActive('team')" class="col-md-2"></fw-menu-item>
+				<img class="col-md-2" src="images/coruja.logo.png">
+				<div class="col-md-10 row">
+					<fw-menu-item title="Pedidos" icon="orders" url="/orders" active="getActive('/orders')" class="col-md-2"></fw-menu-item>
+					<fw-menu-item title="Produtos" icon="products" url="/products" active="getActive('products')" class="col-md-2"></fw-menu-item>
+					<fw-menu-item title="Clientes" icon="customer" url="/customers" active="getActive('customers')" class="col-md-2"></fw-menu-item>
+					<fw-menu-item title="Fornecedores" icon="providers" url="/providers" active="getActive('providers')" class="col-md-2"></fw-menu-item>
+					<fw-menu-item title="Equipe" icon="team" url="/team" active="getActive('team')" class="col-md-2"></fw-menu-item>
+				</div>
 			</div>
 		</div>
 	</div>
