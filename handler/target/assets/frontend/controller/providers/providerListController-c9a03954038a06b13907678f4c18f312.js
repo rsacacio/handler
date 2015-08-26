@@ -1,0 +1,1 @@
+angular.module("handlerApp").controller("ProviderListController",["$scope",function(a){a.itemsBreadCrumbs=[];a.itemsBreadCrumbs.push({name:"voltar",url:"#/"});a.itemsIndicators=[];a.hasData=!1}]);

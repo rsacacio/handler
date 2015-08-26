@@ -1,0 +1,1 @@
+angular.module("handlerApp").factory("CategoryListFactory",["$http",function(a){return{load:function(b,c){a.get("Category/list",{params:{max:b}}).success(c)}}}]);

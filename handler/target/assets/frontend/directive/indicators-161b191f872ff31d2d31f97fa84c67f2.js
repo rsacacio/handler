@@ -1,0 +1,1 @@
+angular.module("handlerApp").directive("fwIndicators",function(){return{restrict:"E",scope:{items:"=items"},templateUrl:"views/directive/indicators.html",link:function(a,b,c){a.indicadores=[1,2,3,4];a.indicadores2=[1,2,3]}}});

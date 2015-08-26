@@ -1,0 +1,57 @@
+<div>
+  <fieldset>
+    <legend>{{title}}</legend>
+    <div class="row">
+      <div class="form-group col-xs-8" fw-show-errors>
+        <span ng-if="!task.genericTemplate" class="text-danger">*</span>
+        <label for="street">Endereço</label>
+        <input name="street" type="text" ng-model="address.street" class="form-control" rows="3" required="true"></input>
+        <p class="help-block" ng-if="parentForm.street.$error.required">Campo obrigatório</p>
+      </div>
+      <div class="form-group col-xs-4" fw-show-errors>
+        <span class="text-danger">*</span>
+        <label for="number">Número</label>
+        <input type="number" name="number" class="form-control" id="number" ng-model="address.number" required="true">
+        <p class="help-block" ng-if="parentForm.number.$error.required">Campo obrigatório</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-xs-4" fw-show-errors>
+        <span class="text-danger">*</span>
+        <label for="neighborhood">Bairro</label>
+        <input type="text" name="neighborhood" class="form-control" id="neighborhood" ng-model="address.neighborhood" required="true">
+        <p class="help-block" ng-if="parentForm.neighborhood.$error.required">Campo obrigatório</p>
+      </div>
+      <div class="form-group col-xs-4" fw-show-errors>
+        <span class="text-danger">*</span>
+        <label for="city">Cidade</label> 
+        <ui-select ng-model="address.city" name="city" append-to-body="true" theme="bootstrap" required="true">
+          <ui-select-match placeholder=" ">{{$select.selected.name}}</ui-select-match>
+          <ui-select-choices repeat="city in citys | filter: $select.search">
+              <small style="font-size:12px;">
+                {{city.name}}
+              </small>
+          </ui-select-choices>
+        </ui-select>
+        <p class="help-block" ng-if="parentForm.city.$error.required">Campo obrigatório</p>
+      </div>
+      <div class="form-group col-xs-4" fw-show-errors>
+        <span class="text-danger">*</span>
+        <label for="state">Estado</label> 
+        <ui-select ng-model="address.state" name="state" append-to-body="true" theme="bootstrap" required="true">
+          <ui-select-match placeholder=" ">{{$select.selected.name}}</ui-select-match>
+          <ui-select-choices repeat="state in states | filter: $select.search">
+              <small style="font-size:12px;">
+                {{state.name}}
+              </small>
+          </ui-select-choices>
+        </ui-select>
+        <p class="help-block" ng-if="parentForm.city.$error.required">Campo obrigatório</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="complement">Observação</label> 
+      <textarea name="complement" class="form-control" id="complement" ng-model="address.complement" rows="3"></textarea>
+    </div>
+  </fieldset>
+</div>

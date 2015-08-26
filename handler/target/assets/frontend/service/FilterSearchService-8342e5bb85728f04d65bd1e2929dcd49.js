@@ -1,0 +1,1 @@
+angular.module("handlerApp").service("FilterSearchService",function(){return{create:function(b){var a="",c="";b.sorting()&&(a=b.orderBy()[0],-1<a.indexOf("+")?(c=a.split("+"),a="asc"):(c=a.split("-"),a="desc"),c=c[1]);return{page:b.page(),size:b.count(),order:a,sort:c,search:b.filter()[0]}}}});

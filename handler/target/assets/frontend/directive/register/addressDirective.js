@@ -1,0 +1,2 @@
+angular.module("handlerApp").directive("hanAddress",function(){return{restrict:"E",scope:{address:"=address",parentForm:"=parentForm",title:"@title"},templateUrl:"views/directive/register/addressDirective.html",link:function(a,b,c){a.citys=[];a.citys.push({name:"S\u00e3o Jos\u00e9",id:1});a.citys.push({name:"Florian\u00f3polis",id:2});a.citys.push({name:"Palho\u00e7a",id:3});a.states=[];a.states.push({name:"Santa Catarina",id:1});a.states.push({name:"Paran\u00e1",id:2});a.states.push({name:"Rio Grande do Sul",
+id:3})}}});

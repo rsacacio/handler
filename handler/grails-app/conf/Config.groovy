@@ -74,6 +74,10 @@ grails.spring.bean.packages = []
 // whether to disable processing of multi part requests
 grails.web.disable.multipart=false
 
+grails.assets.minifyJs=false
+grails.assets.minifyCss=false
+grails.assets.bundle=false
+
 // request parameters to mask when logging exceptions
 grails.exceptionresolver.params.exclude = ['password']
 
@@ -92,6 +96,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
+		grails.serverURL = "http://Default-Environment-zjpmzawge2.elasticbeanstalk.com"
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }

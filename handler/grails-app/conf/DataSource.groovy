@@ -2,8 +2,6 @@ dataSource {
     pooled = true
     driverClassName = "org.postgresql.Driver"
     dialect = "org.hibernate.dialect.PostgreSQLDialect"
-    username = "postgres"
-    password = "admin"
 	logSql = true
 	formatSql = true
 }
@@ -21,19 +19,25 @@ environments {
     development {
 		dataSource {
 			dbCreate = "create-drop"
+			username = "postgres"
+			password = "admin"
             url = "jdbc:postgresql://localhost:5432/handler"
         }
     }
     test {
         dataSource {
             dbCreate = "update"
+			username = "postgres"
+			password = "admin"
             url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
         }
     }
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+			username = "handler"
+			password = "handler-app"
+            url = "jdbc:postgresql://localhost:5432/handler"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true

@@ -1,0 +1,1 @@
+angular.module("handlerApp").controller("CategoryListController",["$scope","CategoryListFactory","ngTableParams","FilterSearchService",function(b,c,a,d){b.tableCategory=new a({page:1,count:10,sorting:{name:"asc"}},{total:0,getData:function(b,a){c.load(a.count(),function(a){b.resolve(a)})}})}]);

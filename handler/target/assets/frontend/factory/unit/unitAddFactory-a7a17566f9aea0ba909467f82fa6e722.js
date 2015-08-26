@@ -1,0 +1,1 @@
+angular.module("handlerApp").factory("UnitAddFactory",["$http",function(a){return{save:function(b,c){a.post("Unit/save",b).success(c)}}}]);

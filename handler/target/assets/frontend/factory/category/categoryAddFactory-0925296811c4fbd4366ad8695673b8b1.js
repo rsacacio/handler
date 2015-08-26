@@ -1,0 +1,1 @@
+angular.module("handlerApp").factory("CategoryAddFactory",["$http",function(a){return{save:function(b,c){a.post("Category/save",b).success(c)}}}]);

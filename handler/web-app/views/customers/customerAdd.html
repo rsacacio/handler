@@ -1,0 +1,49 @@
+<fw-bread-crumbs items="itemsBreadCrumbs" title="Novo cliente"></fw-bread-crumbs>
+<div class="page">
+  <form name="customerForm" novalidate>
+    <div class="row">
+      <div class="form-group col-xs-8" fw-show-errors>
+        <span class="text-danger">*</span>
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" name="name" ng-model="customer.name" required="true">
+        <p class="help-block" ng-if="customerForm.name.$error.required">Campo obrigatório</p>
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="gender">Gênero</label>
+        <ui-select ng-model="customer.gender" name="gender" append-to-body="true" theme="bootstrap" required="true">
+          <ui-select-match placeholder=" ">{{$select.selected.name}}</ui-select-match>
+          <ui-select-choices repeat="gender in genders | filter: $select.search">
+              <small style="font-size:12px;">
+                {{gender.name}}
+              </small>
+          </ui-select-choices>
+        </ui-select>
+        <p class="help-block" ng-if="customerForm.gender.$error.required">Campo obrigatório</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-xs-4" fw-show-errors>
+        <label for="birthday">Data de nascimento</label>
+        <han-date-range sigle="true" model="customer.birthday" name="birthday"></han-date-
+        <input type="text" class="form-control" name="birthday" ng-model="customer.birthday" required="true">
+        <p class="help-block" ng-if="customerForm.name.$error.required">Campo obrigatório</p>
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="rg">RG</label>
+        <input type="text" class="form-control" name="rg" ng-model="customer.rg" required="true">
+      </div>
+      <div class="form-group col-xs-4">
+        <label for="name">CPF</label>
+        <input type="text" class="form-control" name="cpf" ng-model="customer.cpf" required="true">  
+      </div>
+    </div>
+    <han-address address="customer.address" title="Endereço" parent-form="customerForm"></han-address>
+    <hr></hr>
+    <div class="form-group bottomBar">
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancelar</button>
+        <button type="button" class="btn btn-default" ng-click="clean()">Limpar</button>
+        <button type="submit" class="btn btn-primary" ng-click="save()">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>

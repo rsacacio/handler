@@ -1,0 +1,1 @@
+angular.module("handlerApp").factory("CustomerAddFactory",["$http",function(b){return{save:function(a,c){console.log(a);b.post("Customer/save",a).success(c)}}}]);

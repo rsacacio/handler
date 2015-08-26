@@ -1,0 +1,1 @@
+angular.module("handlerApp").controller("MainController",["$scope",function(a){a.teste="aaaa"}]);

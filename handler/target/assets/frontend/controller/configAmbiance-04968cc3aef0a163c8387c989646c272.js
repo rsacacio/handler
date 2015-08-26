@@ -1,0 +1,1 @@
+angular.module("handlerApp").controller("ConfigAmbianceController",["$scope","$routeParams",function(a,b){a.page="views/config/"+b.page+"/"+b.page+b.list+".html";a.activeMenu=function(a){return b.page===a?"active":""}}]);

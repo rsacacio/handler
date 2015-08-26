@@ -1,0 +1,1 @@
+angular.module("handlerApp").controller("HeaderController",["$scope","$location",function(a,b){}]);

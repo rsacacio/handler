@@ -1,13 +1,21 @@
-<table ng-table="tableCategory" show-filter="true" class="table">
-    <tr ng-repeat="category in $data">
-        <td data-title="'Nome'" sortable="'name'">
-            {{category.name}}
-        </td>
-        <td data-title="'Descrição'" sortable="'description'">
-            {{category.description}}
-        </td>
-    </tr>
+<fw-bread-crumbs items="itemsBreadCrumbs" title="Categoria"></fw-bread-crumbs>
+<fw-page-actions button-title="Nova categoria" button-action="#/configAmbiance/category/Add" ng-if="hasData" ></fw-page-actions>
+<fw-empty-page title="Você ainda não cadastrou nenhuma categoria" button-title="Nova categoria" button-action="#/configAmbiance/category/Add" ng-if="!hasData"></fw-empty-page>
+<table ng-table="tableCategory" class="table" ng-if="hasData">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrição</th>
+		</tr>
+	</thead>
+	<tbody>
+	    <tr ng-repeat="category in $data">
+	        <td data-title="'Nome'" sortable="'name'">
+	            {{category.name}}
+	        </td>
+	        <td data-title="'Descrição'" sortable="'description'">
+	            {{category.description}}
+	        </td>
+	    </tr>
+	</tbody>
 </table>
-<div>
-    <a type="button" class="btn btn-success" href="#/category/add">Adicionar</a>
-</div>

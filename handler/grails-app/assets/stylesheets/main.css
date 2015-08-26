@@ -54,6 +54,10 @@ html {
 
 .input-ERRO-DIV {border:2px solid #A94442 !important; padding: 4px 4px;}
 
+.bottomBar{
+  float: right;
+}
+
 /*-----------------------------------------------*\
     Loading spinner
 \*-----------------------------------------------*/

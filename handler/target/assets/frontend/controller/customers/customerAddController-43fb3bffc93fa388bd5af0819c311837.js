@@ -1,0 +1,1 @@
+angular.module("handlerApp").controller("CustomerAddController",["$scope","$location","CustomerAddFactory",function(a,b,c){a.save=function(){a.$broadcast("show-errors-check-validity");a.customerForm.$valid&&ProductAddFactory.save(a.product,function(a){b.path("/customers/")})};a.itemsBreadCrumbs=[];a.itemsBreadCrumbs.push({name:"voltar",url:"/customers"})}]);

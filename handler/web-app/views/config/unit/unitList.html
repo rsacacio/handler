@@ -1,6 +1,7 @@
 <fw-bread-crumbs items="itemsBreadCrumbs" title="Unidade"></fw-bread-crumbs>
-<fw-page-actions button-title="Novo produto" button-action="#/configAmbiance/unit/Add" ></fw-page-actions>
-<table ng-table="tableUnit" class="table">
+<fw-page-actions button-title="Nova unidade" button-action="#/configAmbiance/unit/Add" ng-if="hasData"></fw-page-actions>
+<fw-empty-page title="Você ainda não cadastrou nenhuma unidade" button-title="Nova unidade" button-action="#/configAmbiance/unit/Add" ng-if="!hasData"></fw-empty-page>
+<table ng-table="tableUnit" class="table" ng-if="hasData">
 	<thead>
 		<tr>
 			<th>Nome</th>

@@ -1,0 +1,1 @@
+angular.module("handlerApp").factory("ProductListFactory",["$http",function(a){return{load:function(b,c){a.get("Product/list",{params:{filter:b}}).success(c)}}}]);

@@ -1,0 +1,1 @@
+angular.module("handlerApp").controller("CategoryAddController",["$scope","$location","CategoryAddFactory",function(a,b,c){a.save=function(){c.save(a.category,function(a){b.path("/category/")})}}]);

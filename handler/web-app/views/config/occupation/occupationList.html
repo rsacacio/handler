@@ -1,0 +1,21 @@
+<fw-bread-crumbs items="itemsBreadCrumbs" title="Cargo"></fw-bread-crumbs>
+<fw-page-actions button-title="Novo cargo" button-action="#/configAmbiance/occupation/Add" ng-if="hasData"></fw-page-actions>
+<fw-empty-page title="Você ainda não cadastrou nenhum cargo" button-title="Novo cargo" button-action="#/configAmbiance/occupation/Add" ng-if="!hasData"></fw-empty-page>
+<table ng-table="tableOccupation" class="table" ng-if="hasData">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Descrição</th>
+		</tr>
+	</thead>
+	<tbody>
+	    <tr ng-repeat="occupation in $data">
+	        <td data-title="'Nome'" sortable="'name'">
+	            {{occupation.name}}
+	        </td>
+	        <td data-title="'Descrição'" sortable="'description'">
+	            {{occupation.description}}
+	        </td>
+	    </tr>
+	</tbody>
+</table>

@@ -1,0 +1,1 @@
+angular.module("handlerApp").factory("UnitListFactory",["$http",function(a){return{load:function(b,c){a.get("Unit/list",{params:{max:b}}).success(c)}}}]);
